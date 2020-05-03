@@ -1,0 +1,29 @@
+name: catan
+version: 1.0.0
+summary: PC port of game "Settlers of catan"
+description: PC port of game "Settlers of catan" from HSE students
+
+apps:
+  project:
+    command: usr/bin/wrapper
+    plugs:
+      - unity7
+      - opengl
+      - network
+      - wayland
+      - x11
+      - display-control
+parts:
+  project:
+    plugin: copy
+    stage-packages:
+      - libsdl2-dev
+      - libsdl2-image-dev
+      - libsdl2-mixer-dev
+    files:
+      project: project
+      wrapper: usr/bin/wrapper
+      resources*: resources
+      libgrpc.so.9: usr/local/lib/libgrpc.so.9
+      libgrpc++.so.1: usr/local/lib/libgrpc++.so.1
+      libprotobuf.so.22: usr/local/lib/libprotobuf.so.22

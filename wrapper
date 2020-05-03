@@ -1,0 +1,4 @@
+#!/bin/bash
+export XDG_DATA_HOME=$SNAP/usr/share
+export LD_LIBRARY_PATH=$SNAP_LIBRARY_PATH:$SNAP/usr/local/lib/
+exec "$SNAP/project" "$@"
